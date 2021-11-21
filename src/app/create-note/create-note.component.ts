@@ -27,5 +27,9 @@ export class CreateNoteComponent implements OnInit {
     this.router.navigate([''])
   }
 
+  editNote(){
+    this.noteService.editNote(this.typedTitle,this.typedContent)
+    this.router.navigate([''])
+  }
   
 }

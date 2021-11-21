@@ -11,7 +11,7 @@ export class NoteServiceService {
   constructor() { }
 
   addNote(typedTitle:String, typedContent:String){
-    if(typedContent== "" || typedTitle=="")
+    if(typedContent == "" || typedTitle == "")
     return;
 
   console.log(`${typedTitle} ${typedContent} `);
@@ -25,7 +25,7 @@ export class NoteServiceService {
   }
 
   deleteNote(typedTitle:String){
-    if(typedTitle=="") return;
+    if(typedTitle == "") return;
 
     let itemToBeDeleted = this.notesList.findIndex(note => note.title == typedTitle)
     console.log(`${itemToBeDeleted}`);
@@ -35,6 +35,16 @@ export class NoteServiceService {
 
     this.notesList.splice(itemToBeDeleted,1) 
 
+  }
+
+  editNote(typedTitle:string, newContent:string){
+    if(newContent == "" || typedTitle == "")
+    return;
+    for(let i=0; i<this.notesList.length; i++){
+      if(this.notesList[i].title == typedTitle){
+        this.notesList[i].content = newContent;
+      }
+    }
   }
 
 
