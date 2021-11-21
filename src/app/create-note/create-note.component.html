@@ -1,0 +1,21 @@
+<div class="notesBar">
+
+        <div class="item">
+             <!-- <label for="noteTitle"><h3>Title</h3></label>  -->
+            <input type="text" name="noteTitle" id="noteTitle" [(ngModel)]= "typedTitle" placeholder="TITLE">
+
+        </div>
+
+        <div class="item">
+             <!-- <label for="noteContent"><h3>Content</h3></label>  -->
+            <input type="text" name="noteContent" id="noteContent" [(ngModel)]= "typedContent" placeholder="CONTENT">
+
+        </div>
+
+        <div class="item">
+            <button type="submit" (click) = "addNote()" class="button">Add Note</button>
+            <button type="reset" class="button" (click)="deleteNote()">Delete Note</button>
+        </div> 
+
+         
+   </div> 

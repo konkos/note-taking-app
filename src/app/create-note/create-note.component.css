@@ -1,0 +1,13 @@
+.notesBar{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr ; 
+    grid-template-rows: auto;   
+}
+
+.notesBar{
+    width: 100%;
+}
+
+.button{
+    justify-self: center;
+}

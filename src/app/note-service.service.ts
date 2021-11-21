@@ -21,7 +21,6 @@ export class NoteServiceService {
     content:typedContent,
     timestamp:timestamp
   }
-
     this.notesList.push(currentNote)
   }
 
