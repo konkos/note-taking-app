@@ -1,39 +1,4 @@
-
-<!-- <style>
-    .notesBar{
-    display: grid;
-    grid-template-columns: 3fr 3fr 1fr; 
-    grid-template-rows: auto ;   
-}
-
-.button{
-    padding: 10% 0%;
-    justify-self: center;
-}
-</style> -->
 <div>
-    <!-- <div class="notesBar">
-        <div class="item">
-             <label for="noteTitle"><h3>Title</h3></label> 
-            <input type="text" name="noteTitle" id="noteTitle" [(ngModel)]= "typedTitle" placeholder="TITLE">
-
-        </div>
-
-        <div class="item">
-             <label for="noteContent"><h3>Content</h3></label> 
-            <input type="text" name="noteContent" id="noteContent" [(ngModel)]= "typedContent" placeholder="CONTENT">
-
-        </div>
-
-        <div class="item">
-            <button type="submit" (click) = "addNote()" class="button">Add Note</button>
-            <button type="reset" class="button" (click)="deleteNote()">Delete Note</button>
-        </div> -->
-
-        <!-- <div class="item" id="button">
-            
-        </div> -->
-    <!-- </div> -->
     <button (click)='navigateToCreateNote()'>New Note</button>
     
     <ol class="notesBoard">
@@ -43,7 +8,5 @@
             <h4>Content: {{note.content}}</h4> 
 
             <h4>When: {{note.timestamp}} </h4>  
-            <!-- <button (click)="deleteNote()">DELETE</button> -->
         </li>
     </ol>
-<!-- </div> -->

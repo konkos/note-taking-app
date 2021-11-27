@@ -13,17 +13,18 @@ export class MainComponent implements OnInit {
 
   notes:Note[] = []
   
-  constructor(private noteService:NoteServiceService, private router:Router, private apiService:ApiIntegrationService) { }
+  constructor(private noteService:NoteServiceService, private router:Router) { } //, private apiService:ApiIntegrationService
 
   ngOnInit(): void {
-    /* this.apiService.getApiResult(
+    /* EXAMPLE OF API CALL 
+      this.apiService.getApiResult(
       ['Programming','Miscellaneous','Dark','Pun','Spooky','Christmas'],
       ['nsfw','religious','political','racist','sexist','explicit'])
     .subscribe(result => console.log(`SERVICE RESULT:: JOKE:${result.joke} CATEGORY:${result.category} ${result.safe} ${result.type}`)) */
   }
 
   ngDoCheck(){
-    let check:Boolean = this.noteService.checkNotesEquality(this.notes)
+    let check = this.noteService.checkNotesEquality(this.notes)
     if(check){
       this.notes = this.noteService.notesList
     }
