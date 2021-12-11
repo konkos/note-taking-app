@@ -24,10 +24,8 @@ export class MainComponent implements OnInit {
   }
 
   ngDoCheck(){
-    let check = this.noteService.checkNotesEquality(this.notes)
-    if(check){
+    // let check = this.noteService.checkNotesEquality(this.notes)
       this.notes = this.noteService.notesList
-    }
   }
 
   navigateToCreateNote(){
