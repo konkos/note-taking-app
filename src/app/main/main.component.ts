@@ -32,4 +32,10 @@ export class MainComponent implements OnInit {
     this.router.navigate(['createNote'])
     console.log('clicked navigate');
   }
+
+  openPopUp(){
+    // TODO add popup screen
+    console.log('popUp');
+    
+  }
 }
