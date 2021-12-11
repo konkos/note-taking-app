@@ -18,5 +18,15 @@
             <button class="button" (click)="editNote()">Edit Note</button>
         </div> 
 
-         
+
+        <!-- CREATE COMPONENT FOR notesBoard -->
+        <ol class="notesBoard">
+            <li *ngFor="let note of notes">
+                <h4>Title : {{note.title}}</h4> 
+    
+                <h4>Content: {{note.content}}</h4> 
+    
+                <h4>When: {{note.timestamp}} </h4>  
+            </li>
+        </ol>
    </div> 
