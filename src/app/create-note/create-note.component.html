@@ -9,7 +9,7 @@
         <div class="item">
              <!-- <label for="noteContent"><h3>Content</h3></label>  -->
             <!-- <input type="text" name="noteContent" id="noteContent" [(ngModel)]= "typedContent" placeholder="CONTENT"> -->
-            <textarea name="noteContent" id="noteContent" cols="30" rows="10" [(ngModel)]= "typedContent"></textarea>
+            <textarea name="noteContent" id="noteContent" cols="30" rows="10" [(ngModel)]= "typedContent" placeholder="Content"></textarea>
         </div>
 
         <div class="item">
@@ -21,7 +21,7 @@
 
         <!-- CREATE COMPONENT FOR notesBoard -->
         <ol class="notesBoard">
-            <li *ngFor="let note of notes">
+            <li *ngFor="let note of notes" class="note">
                 <h4>Title : {{note.title}}</h4> 
     
                 <h4>Content: {{note.content}}</h4> 

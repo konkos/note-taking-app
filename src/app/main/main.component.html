@@ -1,8 +1,8 @@
 <div>
-    <button (click)='navigateToCreateNote()'>Create</button>
+    <button (click)='navigateToCreateNote()'>Create/Edit</button>
     <button (click)='openPopUp()'>pop up</button>
     <ol class="notesBoard">
-        <li *ngFor="let note of notes">
+        <li *ngFor="let note of notes" class="note">
             <h4>Title : {{note.title}}</h4> 
 
             <h4>Content: {{note.content}}</h4> 

@@ -11,3 +11,11 @@
 .button{
     justify-self: center;
 }
+
+.note{
+
+    background-color: blue; 
+    color: white; 
+    margin-bottom: 50px;
+    padding: 5%;
+}
