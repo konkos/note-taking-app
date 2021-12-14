@@ -18,9 +18,9 @@ export class ApiIntegrationService {
     this.addBlackListFlagsIntoURL(blackListFlags)
 
     console.log(`URL2:::  ${this.url}`);
-    
-    return this.http
-    .get<ApiResponse>(`${this.url}`,{observe:'body'})
+    let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
+    this.url = 'https://v2.jokeapi.dev/joke/'
+    return res
   }
 
   private removeLastComma(str:String):String {

@@ -1,6 +1,6 @@
 <div>
     <button (click)='navigateToCreateNote()'>Create/Edit</button>
-    <button (click)='openPopUp()'>pop up</button>
+    <button (click)='openPopUp()' data-toggle="modal" data-target="#myModal">pop up</button>
     <!-- CREATE COMPONENT FOR notesBoard -->
     <ol class="notesBoard">
         <li *ngFor="let note of notes" class="note">
@@ -11,3 +11,4 @@
             <h4>When: {{note.timestamp}} </h4>  
         </li>
     </ol>
+<app-modal *ngIf="popUp"></app-modal>

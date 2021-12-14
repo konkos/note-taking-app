@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Note } from '../models/Note.model'
+import { ApiResponse, JokeValue } from '../models/response.model';
 import { NoteServiceService } from '../note-service.service';
 import { ApiIntegrationService } from '../services/api-integration.service';
 
@@ -12,8 +13,10 @@ import { ApiIntegrationService } from '../services/api-integration.service';
 export class MainComponent implements OnInit {
 
   notes:Note[] = []
+  popUp:Boolean=false
   
-  constructor(private noteService:NoteServiceService, private router:Router) { } //, private apiService:ApiIntegrationService
+  
+  constructor(private noteService:NoteServiceService, private router:Router) { } //
 
   ngOnInit(): void {
     /* EXAMPLE OF API CALL 
@@ -36,6 +39,9 @@ export class MainComponent implements OnInit {
   openPopUp(){
     // TODO add popup screen
     console.log('popUp');
+    this.popUp=true
     
   }
+
+  
 }
