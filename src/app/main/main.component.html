@@ -1,11 +1,12 @@
 <div>
     <button (click)='navigateToCreateNote()'>Create/Edit</button>
     <button (click)='openPopUp()'>pop up</button>
+    <!-- CREATE COMPONENT FOR notesBoard -->
     <ol class="notesBoard">
         <li *ngFor="let note of notes" class="note">
-            <h4>Title : {{note.title}}</h4> 
+            <h2>Title : {{note.title}}</h2> 
 
-            <h4>Content: {{note.content}}</h4> 
+            <h3>Content: {{note.content}}</h3> 
 
             <h4>When: {{note.timestamp}} </h4>  
         </li>
