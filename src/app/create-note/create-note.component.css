@@ -1,28 +1,7 @@
-/* 
-
-.button{
-    justify-self: center;
-}
-
-
-
-.item > button{
-    width: 100%;
-} */
-
 input{
     margin-right: 20px;
 }
 
-/* .notesBar{
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr ; 
-    grid-template-rows: auto;   
-}
-
-.notesBar{
-    width: 100%;
-} */
 .note{
 
     background-color: blue; 

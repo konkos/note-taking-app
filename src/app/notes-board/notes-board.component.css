@@ -1,21 +1,11 @@
-.notesBar{
-    display: grid;
-    grid-template-columns: 2fr 2fr 1fr ; 
-    grid-template-rows: auto;   
-}
-
-.notesBar{
-    width: 100%;
-}
-
-.button{
-    justify-self: center;
-}
-
 .note{
 
     background-color: blue; 
     color: white; 
     margin-bottom: 50px;
     padding: 5%;
+}
+
+.notesBoard{
+    margin-top: 20px;
 }
