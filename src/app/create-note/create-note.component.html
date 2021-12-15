@@ -1,23 +1,14 @@
-<div class="notesBar">
-
-        <div class="item">
-             <!-- <label for="noteTitle"><h3>Title</h3></label>  -->
-            <input type="text" name="noteTitle" id="noteTitle" [(ngModel)]= "typedTitle" placeholder="TITLE">
-
-        </div>
-
-        <div class="item">
-             <!-- <label for="noteContent"><h3>Content</h3></label>  -->
-            <!-- <input type="text" name="noteContent" id="noteContent" [(ngModel)]= "typedContent" placeholder="CONTENT"> -->
-            <textarea name="noteContent" id="noteContent" cols="30" rows="10" [(ngModel)]= "typedContent" placeholder="Content"></textarea>
-        </div>
-
-        <div class="item">
+<div class="notesBar row">       
+        <div class="input-group col-8">
+           
+            <input type="text" class="form-control" placeholder="Title" [(ngModel)]= "typedTitle">
+            <textarea type="text" class="form-control" placeholder="Content" [(ngModel)]= "typedContent"></textarea>
+          </div>
+          <div class="item col-4 btn-group-vertical">
             <button type="submit" (click) = "addNote()" class="button" class="btn btn-primary">Add Note</button>
             <button class="button" (click)="deleteNote()" class="btn btn-danger">Delete Note</button>
             <button class="button" (click)="editNote()" class="btn btn-success">Edit Note</button>
         </div> 
-
 
        
    </div> 
