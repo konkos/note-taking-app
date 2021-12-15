@@ -1,14 +1,7 @@
 <div>
     <button (click)='navigateToCreateNote()' class="btn btn-outline-primary">Create/Edit</button>
     <button (click)='openPopUp()' data-toggle="modal" data-target="#myModal" class="btn btn-outline-dark">Tell a Joke</button>
-    <!-- CREATE COMPONENT FOR notesBoard -->
-    <ol class="notesBoard">
-        <li *ngFor="let note of notes" class="note">
-            <h2>Title : {{note.title}}</h2> 
-
-            <h3>Content: {{note.content}}</h3> 
-
-            <h4>When: {{note.timestamp}} </h4>  
-        </li>
-    </ol>
-<app-modal *ngIf="popUp"></app-modal>
+    
+    <app-notes-board></app-notes-board>
+    <app-modal *ngIf="popUp"></app-modal>
+</div>
