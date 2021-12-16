@@ -17,7 +17,7 @@ export class NoteServiceService {
     }
 
   console.log(`${typedTitle} ${typedContent} `);
-  let timestamp = new Date(new Date().getTime()).toUTCString()
+  let timestamp = new Date(new Date().getTime()).toLocaleString('el-GR')//, { timeZone: 'EET' })
   let currentNote:Note = {
     title:typedTitle,
     content:typedContent,
