@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateNoteComponent } from './create-note/create-note.component';
 import { ModalComponent } from './modal/modal.component';
 import { NotesBoardComponent } from './notes-board/notes-board.component';
+import { NoteComponent } from './note/note.component';
 
 
 const appRoutes: Routes = [
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     MainComponent,
     CreateNoteComponent,
     ModalComponent,
-    NotesBoardComponent
+    NotesBoardComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,

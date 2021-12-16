@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-8">
+        <h4>Title : {{note.title}}</h4> 
+
+        <h4>Content: {{note.content}}</h4> 
+    
+        <h4>When: {{note.timestamp}} </h4>  
+    </div>
+  
+    <div class="col-4">
+    <button (click)="deleteNote()" class="btn btn-danger btn-lg">DELETE</button>
+
+    </div>
+</div>
