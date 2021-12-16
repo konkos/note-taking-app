@@ -11,8 +11,10 @@ export class NoteServiceService {
   constructor() { }
 
   addNote(typedTitle:String, typedContent:String){
-    if(typedContent == "" || typedTitle == "")
-    return;
+    if(typedContent == "" || typedTitle == ""){
+      alert("No title or Content")
+      return;
+    }
 
   console.log(`${typedTitle} ${typedContent} `);
   let timestamp = new Date(new Date().getTime()).toUTCString()
@@ -38,8 +40,10 @@ export class NoteServiceService {
   }
 
   editNote(typedTitle:string, newContent:string){
-    if(newContent == "" || typedTitle == "")
-    return;
+    if(newContent == "" || typedTitle == ""){
+      alert("No title or Content")
+      return;
+    }
     for(let i=0; i<this.notesList.length; i++){
       if(this.notesList[i].title == typedTitle){
         this.notesList[i].content = newContent;
