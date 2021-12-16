@@ -10,12 +10,13 @@ import { ApiIntegrationService } from '../services/api-integration.service';
 export class ModalComponent implements OnInit {
 
   joke:String = '' 
-
+  categoriesLIST:String[] = ['Programming','Miscellaneous','Dark','Pun','Spooky','Christmas']
+  blackListFlagsLIST = ['nsfw','religious','political','racist','sexist','explicit']
 
   constructor(private apiService:ApiIntegrationService) { }
   
   ngOnInit(): void {
-     this.callApi()
+     //this.callApi()
   }
 
   ngOnChanges(){

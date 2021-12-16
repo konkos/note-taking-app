@@ -1,9 +1,5 @@
 <ol class="notesBoard">
     <li *ngFor="let note of notes" class="note">
-        <h4>Title : {{note.title}}</h4> 
-
-        <h4>Content: {{note.content}}</h4> 
-
-        <h4>When: {{note.timestamp}} </h4>  
+       <app-note [note]= "note"></app-note>
     </li>
 </ol>
