@@ -58,4 +58,8 @@ export class NoteServiceService {
     }
     return false;
   }
+
+  getNote(index:number){
+    return this.notesList[index]
+  }
 }

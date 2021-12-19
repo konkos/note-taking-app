@@ -10,11 +10,13 @@ import { CreateNoteComponent } from './create-note/create-note.component';
 import { ModalComponent } from './modal/modal.component';
 import { NotesBoardComponent } from './notes-board/notes-board.component';
 import { NoteComponent } from './note/note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
 
 const appRoutes: Routes = [
   {path:'',component:MainComponent},
-  {path:'createNote', component:CreateNoteComponent}
+  {path:'createNote', component:CreateNoteComponent},
+  {path:'editNote/:title',component:EditNoteComponent}
 ]
 
 @NgModule({
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
     CreateNoteComponent,
     ModalComponent,
     NotesBoardComponent,
-    NoteComponent
+    NoteComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,

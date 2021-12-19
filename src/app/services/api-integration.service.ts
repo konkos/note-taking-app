@@ -14,7 +14,6 @@ export class ApiIntegrationService {
 
   getApiResult(categories:String[], blackListFlags:String[]){
     
-    
     if(categories.length==0 && blackListFlags.length==0){
       this.url+='Any?type=single'
       let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
