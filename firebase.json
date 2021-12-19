@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/note-taking-app",
     "ignore": [
       "firebase.json",
       "**/.*",
