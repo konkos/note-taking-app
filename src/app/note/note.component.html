@@ -7,8 +7,8 @@
         <h4>When: {{note.timestamp}} </h4>  
     </div>
   
-    <div class="col-4 btn-group-vertical">
-    <button (click)="deleteNote()" class="btn btn-danger btn-lg">DELETE</button>
-    <button class="btn btn-success btn-lg" (click)="editNote($event,note.title)">EDIT</button>
-    </div>
+    <!-- <div class="col-4 btn-group-vertical btn-block"> -->
+    <button (click)="deleteNote()" class="btn btn-danger btn-md btn-block">DELETE</button>
+    <button class="btn btn-success btn-md btn-block" (click)="editNote($event,note.title)">EDIT</button>
+    <!-- </div> -->
 </div>
