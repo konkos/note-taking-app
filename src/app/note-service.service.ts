@@ -16,6 +16,11 @@ export class NoteServiceService {
       return;
     }
 
+    if(this.checkDuplicateTitle(typedTitle)){
+      alert('Title Already Exists [Title Field is Used As An Id] ')
+      return;
+    }
+
   console.log(`${typedTitle} ${typedContent} `);
   let timestamp = new Date(new Date().getTime()).toLocaleString('el-GR')//, { timeZone: 'EET' })
   let currentNote:Note = {
@@ -61,5 +66,15 @@ export class NoteServiceService {
 
   getNote(index:number){
     return this.notesList[index]
+  }
+
+  private checkDuplicateTitle(typedTitle:String):Boolean{
+    let temp = this.notesList.filter(note => {
+      return note.title === typedTitle
+    })
+
+    if(temp.length>0)
+      return true
+    return false
   }
 }
