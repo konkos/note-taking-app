@@ -11,6 +11,7 @@ import { ModalComponent } from './modal/modal.component';
 import { NotesBoardComponent } from './notes-board/notes-board.component';
 import { NoteComponent } from './note/note.component';
 import { EditNoteComponent } from './edit-note/edit-note.component';
+import { OrderNotesPipe } from './pipes/order-notes.pipe';
 
 
 const appRoutes: Routes = [
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     ModalComponent,
     NotesBoardComponent,
     NoteComponent,
-    EditNoteComponent
+    EditNoteComponent,
+    OrderNotesPipe
   ],
   imports: [
     BrowserModule,

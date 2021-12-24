@@ -11,6 +11,7 @@ export class NotesBoardComponent implements OnInit {
 
 
   notes:Note[] = []
+  order:Boolean = false
 
   constructor(private noteService:NoteServiceService) { }
 
@@ -22,4 +23,7 @@ export class NotesBoardComponent implements OnInit {
       this.notes = this.noteService.notesList
   }
 
+  changeOrder(){
+    this.order = !this.order
+  }
 }
