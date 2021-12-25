@@ -1,4 +1,4 @@
-<button class="btn btn-dark" (click)="changeOrder()">Change order</button>
+<button class="btn btn-dark" (click)="changeOrder()" [innerHTML]="orderSign"></button>
 <ol class="notesBoard">
     <li *ngFor="let note of notes | orderNotes : order" class="note">
        <app-note [note]= "note"></app-note>
