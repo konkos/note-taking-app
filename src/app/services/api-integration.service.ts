@@ -12,8 +12,12 @@ export class ApiIntegrationService {
   blackListFlagsLIST = ['nsfw','religious','political','racist','sexist','explicit']
   constructor(private http:HttpClient) { }
 
-  getApiResult(categories:String[], blackListFlags:String[]){
+  getApiResult(categories:String[], blackListFlags:String[], isdoubleJoke:Boolean){
     
+    if(isdoubleJoke){
+      return this.getApiResultDoubleJoke(categories,blackListFlags)
+    }
+
     if(categories.length==0 && blackListFlags.length==0){
       this.url+='Any?type=single'
       let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
@@ -21,7 +25,8 @@ export class ApiIntegrationService {
     }
   
     this.addCategoriesIntoURL(categories)
-    this.addBlackListFlagsIntoURL(blackListFlags)
+    let areBlackFlagsAdded = this.addBlackListFlagsIntoURL(blackListFlags)
+    this.finaliseSingleJokeRequest(areBlackFlagsAdded)
 
     console.log(`URL2:::  ${this.url}`);
     let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
@@ -41,17 +46,49 @@ export class ApiIntegrationService {
     console.log(`URL1:::  ${this.url}`);      
   }
 
-  private addBlackListFlagsIntoURL(blackListFlags:String[]) {
+  private addBlackListFlagsIntoURL(blackListFlags:String[]):boolean {
     if(blackListFlags.length > 0){
       this.url += "?blacklistFlags="
       blackListFlags.map(flag => this.url += `${flag},`)
       this.url = this.removeLastComma(this.url)
-      //last step to get a single joke
+      return true
+    }else{ 
+      return false
+    }
+  }
+
+//last step to get a single joke
+  private finaliseSingleJokeRequest(areBlackFlagsAdded:boolean){
+    if(areBlackFlagsAdded){
       this.url += '&type=single'
     }else{
-      //last step to get a single joke
       this.url += '?type=single'
     }
+  }
+
+  //last step to get a single joke
+  private finaliseTwoPartJokeRequest(areBlackFlagsAdded:boolean){
+    if(areBlackFlagsAdded){
+      this.url += '&type=twopart'
+    }else{
+      this.url += '?type=twopart'
+    }
+  }
+
+  getApiResultDoubleJoke(categories:String[], blackListFlags:String[]){
+    if(categories.length==0 && blackListFlags.length==0){
+      this.url+='Any?type=twopart'
+      let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
+      return res
+    }
+    
+    this.addCategoriesIntoURL(categories)
+    let areBlackListFlagsAdded = this.addBlackListFlagsIntoURL(blackListFlags)
+    this.finaliseTwoPartJokeRequest(areBlackListFlagsAdded)
+
+    let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
+    this.url = 'https://v2.jokeapi.dev/joke/' 
+    return res
   }
 
 }
