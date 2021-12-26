@@ -10,6 +10,8 @@ import { ApiIntegrationService } from '../services/api-integration.service';
 export class ModalComponent implements OnInit {
 
   joke:String = '' 
+  setup:String = ''
+  delivery:String = ''
   categoriesLIST:string[] = ['Programming','Miscellaneous','Dark','Pun','Spooky','Christmas']
   blackListFlagsLIST:string[] = ['nsfw','religious','political','racist','sexist','explicit']
 
@@ -41,12 +43,24 @@ export class ModalComponent implements OnInit {
       }
     })
 
+    let isTwoPartjoke = <HTMLInputElement>document.getElementById('twopartJoke');
     this.apiService.getApiResult(
       categories,
-      blackListFlags)
+      blackListFlags,
+      isTwoPartjoke.checked
+      )
     .subscribe(result => {
       console.log(`SERVICE RESULT:: JOKE:${result.joke} CATEGORY:${result.category} ${result.safe} ${result.type}`)
-      this.joke = result.joke 
+      if(result.type === 'single'){
+        this.joke = result.joke 
+        this.delivery = ''
+        this.setup = ''
+      }
+      else{
+        this.joke = ''
+        this.delivery = result.delivery
+        this.setup = result.setup
+      }
   })
   }
 }
