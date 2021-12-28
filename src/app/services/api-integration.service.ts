@@ -19,9 +19,7 @@ export class ApiIntegrationService {
     }
 
     if(categories.length==0 && blackListFlags.length==0){
-      this.url+='Any?type=single'
-      let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
-      return res
+      return this.http.get<ApiResponse>(`${this.url}Any?type=single`,{observe:'body'})
     }
   
     this.addCategoriesIntoURL(categories)
@@ -77,8 +75,7 @@ export class ApiIntegrationService {
 
   getApiResultDoubleJoke(categories:String[], blackListFlags:String[]){
     if(categories.length==0 && blackListFlags.length==0){
-      this.url+='Any?type=twopart'
-      let res = this.http.get<ApiResponse>(`${this.url}`,{observe:'body'})
+      let res = this.http.get<ApiResponse>(`${this.url}Any?type=twopart`,{observe:'body'})
       return res
     }
     
