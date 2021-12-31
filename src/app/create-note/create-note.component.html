@@ -1,16 +1,42 @@
-<div class="notesBar row">       
+<div class="notesBar row g-3">       
         <div class="input-group col-8">
            
             <input type="text" class="form-control" placeholder="Title" [(ngModel)]= "typedTitle">
             <textarea type="text" class="form-control" placeholder="Content" [(ngModel)]= "typedContent"></textarea>
           </div>
+    
           <div class="item col-4 btn-group-vertical">
             <button type="submit" (click) = "addNote()" class="button" class="btn btn-primary btn-lg">Add Note</button>
             <!-- <button class="button" (click)="deleteNote()" class="btn btn-danger">Delete Note</button> -->
             <!-- <button class="button" (click)="editNote()" class="btn btn-success btn-lg">Edit Note</button> -->
         </div> 
 
-       
 </div> 
-    
+<div class="container">
+
+  <div class="row">
+
+    <form [formGroup]="form">
+      <div class="form-check">
+        <input class="form-check-input" value='low' type="radio" id="lowPriorityRadio" formControlName='priority' checked>
+        <label class="form-check-label" for="lowPriorityRadio">
+          Low Priority
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" value='medium' type="radio" id="mediumPriorityRadio" formControlName='priority'>
+        <label class="form-check-label" for="mediumPriorityRadio">
+          Medium Priority
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" value='high' type="radio" id="highPriorityRadio" formControlName='priority'>
+        <label class="form-check-label" for="highPriorityRadio">
+          High Priority
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+
 <app-notes-board></app-notes-board>

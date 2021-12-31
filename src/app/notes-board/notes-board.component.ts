@@ -24,6 +24,20 @@ export class NotesBoardComponent implements OnInit {
       this.notes = this.noteService.notesList
   }
 
+  ngAfterViewInit(){
+    this.notes.forEach((note)=>{
+      let noteTitle = <HTMLElement>document.getElementById(`${note.title}`)?.parentElement?.parentElement
+      if(noteTitle){
+        switch(note.priority){
+          case 'high' : noteTitle.style.backgroundColor = 'red'; break;
+          case 'low' : noteTitle.style.backgroundColor = 'blue'; break;
+          case 'medium' : noteTitle.style.backgroundColor = 'green'; break;
+        }
+      }
+    })
+   
+  }
+
   changeOrder(){
     this.order = !this.order
     if(this.order)

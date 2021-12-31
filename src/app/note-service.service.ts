@@ -10,7 +10,9 @@ export class NoteServiceService {
 
   constructor() { }
 
-  addNote(typedTitle:String, typedContent:String){
+  addNote(typedTitle:String, typedContent:String, providedPriority:String){
+    console.log(providedPriority);
+    
     if(typedContent == "" || typedTitle == ""){
       alert("No title or Content")
       return;
@@ -26,7 +28,8 @@ export class NoteServiceService {
   let currentNote:Note = {
     title:typedTitle,
     content:typedContent,
-    timestamp:timestamp
+    timestamp:timestamp,
+    priority:providedPriority
   }
     this.notesList.push(currentNote)
   }

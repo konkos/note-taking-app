@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Note } from '../models/Note.model';
 import { NoteServiceService } from '../note-service.service';
@@ -10,17 +11,24 @@ import { NoteServiceService } from '../note-service.service';
 })
 export class CreateNoteComponent implements OnInit {
 
-  constructor(private noteService:NoteServiceService, private router:Router) { }
 
   typedContent:string = '';
   typedTitle:string = '';
   notes:Note[] = []
+  form: FormGroup;
+
+  constructor(private noteService:NoteServiceService, private router:Router,fb: FormBuilder) { 
+    this.form = fb.group({
+      priority : new FormControl('', Validators.required)
+    });
+  }
 
   ngOnInit(): void {
   }
 
   addNote(){
-    this.noteService.addNote(this.typedTitle,this.typedContent)
+
+    this.noteService.addNote(this.typedTitle,this.typedContent,this.form.get('priority')?.value)
     this.router.navigate([''])
   }
 
