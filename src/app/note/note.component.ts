@@ -13,26 +13,13 @@ export class NoteComponent implements OnInit {
   @Input() note:Note = {
     title:'',
     content:'',
-    timestamp:'',
+    timestamp:new Date(),
     priority:''
   }
   constructor(private noteService:NoteServiceService,private router:Router) { }
 
   ngOnInit(): void {
   }
-
-  // ngAfterViewInit(){
-  //   let noteTitle = <HTMLDivElement>document.getElementById(`${this.note.title}`)
-  //   if(noteTitle){
-  //     switch(this.note.priority){
-  //       case 'high' : noteTitle.style.backgroundColor = 'red'; break;
-  //       case 'low' : noteTitle.style.backgroundColor = 'blue'; break;
-  //       case 'medium' : noteTitle.style.backgroundColor = 'green'; break;
-  //     }
-  //   }
-  // }
-
-
   deleteNote(){
     this.noteService.deleteNote(this.note.title)
   }
