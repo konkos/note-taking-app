@@ -39,6 +39,7 @@ export class NotesBoardComponent implements OnInit {
   }
 
   changeOrder(){
+    if(this.notes.length==0) return;
     this.order = !this.order
     if(this.order)
       this.orderSign = '&uarr; Change order'
